@@ -46,10 +46,10 @@ def index():
         username = request.form["id"]
         password = request.form["password"]
 
-        #auth student
+        #Authorization
         student = Student.query.filter_by(username = username, password = password).first()
 
-        #loged in data
+        #correct password
         if student:
             student = {"name":student.name, "username":student.username, "school": student.school}
             session["student"] = student
