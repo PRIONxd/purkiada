@@ -1,4 +1,1 @@
-for(i = 0; i <10; i++){
-    console.log("http://rozsochac.tk/helloworldKominik123");
-    console.log("");
-}
+for(i = 0; i <10; i++){console.log( ' http://localhost:5000/helloworldKominik123 '); console.log('');}

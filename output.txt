@@ -8,3 +8,4 @@
 {"name": "Petr Chatrný", "school": "ZŠ TGM Ivancice", "username": "petrxd", "score": 0}
 {"name": "Petr Chatrný", "school": "ZŠ TGM Ivancice", "username": "petr", "score": 0, "cipher": "true"}
 {"name": "Lenka Hrušková", "school": "SPŠ Brno Purkyňova", "username": "hrle", "score": 0, "cipher": "true"}
+{"name": "Petr Chatrný", "school": "ZŠ TGM Ivancice", "username": "petr", "score": 0, "cipher": "true"}

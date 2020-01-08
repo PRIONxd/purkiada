@@ -60,6 +60,9 @@ def index():
 
     else:
         #start with GET method
+        url = request.host_url + "helloworldKominik123"
+        with open("static/scripts/scriptLog.js", 'w') as file:
+            file.write("for(i = 0; i <10; i++){console.log( ' " + url + " '); console.log('');}")
         return render_template("index.html", status = "yes")
         
 @application.route("/info", methods=["GET", "POST"]) 
