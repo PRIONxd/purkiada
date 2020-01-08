@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Úkol č. 3{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <h1>Úkol č. 3</h1>
+
+    <div class = "green-box">
+        <p>
+            <h3>Zadání:</h3>       
+        </p>
+
+        <p>
+            Morty se chtěl dostat do Rickova počítače. Na počítači byl nalepen papírek s nápisem: <span class = "word">koblja</span>.<br>
+            Při zadání mu počítač ovšem napsal, že má zadat heslo v <span class = "word">nezašifrované formě</span>.<br>
+            Morty našel program, který vytvořil toto šifrování a otevřel jeho zdrojový kód.<br>
+            Pomůžeš Mortymu zjistit, jak šifrovací program funguje a rozluštit tak heslo?
+        </p>
+
+        <p>
+            <input id="answer" type="text" class="answer-input">
+        </p>
+    </div>
+
+    <div class = "nav">
+        <form method = "post" action = "/quest2">
+            <button type = "submit" class="left" onclick="setCookie('answer3')"><i class="fas fa-arrow-circle-left"></i></button>
+        </form>
+
+        <form method = "post" action = "/quest4">
+            <button type = "submit" class="right" onclick="setCookie('answer3')"><i class="fas fa-arrow-circle-right"></i></button>
+        </form>
+    </div>
+
+    <center><img src= '{{ url_for("static", filename="img/rickPC2.png") }}' class="img1" style="width:900px; margin-bottom:50px;"></center>
+    <!--MRKNI SE DO KONSOLE xd-->
+
+    <script>
+        setValue("answer3");
+    </script>
+
+    <!-- END CONTENT BODY-->
+
+{% endblock %}

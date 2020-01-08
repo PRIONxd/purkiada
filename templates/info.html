@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}Informace{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <h1>Informace</h1>
+
+    <div class = "green-box" style="max-width: 600px;">
+        <h2>Zadání</h2>
+        <p>Vítej! V této části purkiády budeš řešit pět úloh na téma šifrování. Úlohy jsou seřazeny od nejlehčí po nejtěžší.</p>
+        <p>Pokud nějakou úlohu nebudeš moct vyřešit, můžeš ji přeskočit a pokračovat na další. K minulému úloze se budeš moct ještě později vrátit.</p>
+        <p>Než odešleš odpovědi, tak si to dvakrát promysli. Tento krok nelze vzít zpět a znovu se již nepřihlásíš.</p>
+        
+        <h2><i class="fas fa-egg"></i> Easter egg <i class="fas fa-egg"></i></h2>
+        <p>
+            Kromě pěti standardních úloh je zde jedna bonusová. 
+            Během řešení můžeš nalézt velikonoční vejce za 2 body. 
+            Toto vejce je skryté a můžeš jej najít při řešení kterékoliv úlohy. 
+            Nezaměř se však jen na hledání. Je to pouze bonus.
+        </p>
+
+        <h2>Bodování</h2>
+        <ul>
+            <li>Úloha č. 1: 2 body</li>
+            <li>Úloha č. 2: 2 body</li>
+            <li>Úloha č. 3: 3 body</li>
+            <li>Úloha č. 4: 3 body</li>
+            <li>Úloha č. 5: 6 body</li>
+            <li>Easter egg: 2 body</li>
+        </ul>
+    </div>
+
+    <div class = "next">
+        <form method = "post" action="/info">
+            <button type="submit" class = "button" action="quest1" style="width:200px; margin-bottom:40px;">Pokračovat</button>
+        </form>
+    </div>
+
+    <!--END CONTENT BODY-->
+{% endblock %}

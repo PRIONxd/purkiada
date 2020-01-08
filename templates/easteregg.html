@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block title %}YOU WON ZULUL !{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <marquee class="marquee" scrollamount="40" loop="infinite" behavior="alternate">🥚EASTER EGG🥚</marquee>
+
+    <div style="display:flex; flex-direction: row;">
+        <marquee behavior="alternate" scrollamount="60">
+            <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+
+        <marquee behavior="alternate" scrollamount="60">
+            <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+
+        <marquee behavior="alternate" scrollamount="60">
+            <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+        
+        <marquee behavior="alternate" scrollamount="60">
+                <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+    </div>
+
+    <div style="display:flex; flex-direction: row;">
+        <marquee behavior="alternate" scrollamount="60">
+            <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+    
+        <marquee behavior="alternate" scrollamount="60">
+            <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+    
+        <marquee behavior="alternate" scrollamount="60">
+            <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+            
+        <marquee behavior="alternate" scrollamount="60">
+            <img src="../static/img/easteregg.png" class="egg">
+        </marquee>
+    </div>
+
+    <input id="answer" type="text" class="answer-input" value = "0" style="display:none;">
+
+    <div class = "next">
+        <form method = "GET" action="/quest1">
+            <button class = "button" action="quest1" onclick="setCookie('easteregg')" style="width:200px; margin-bottom:40px;">Pokračovat</button>
+        </form>
+    </div>
+
+    <script>
+        setValue("easteregg");
+    </script>
+
+    <script>
+        function change() {
+            var a = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var c = Math.floor(Math.random() * 256);
+            var color = 'rgb(' + a + ',' + b + ',' + c + ')';
+            document.body.style.backgroundColor = color;
+            var a = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var c = Math.floor(Math.random() * 256);
+            var color = 'rgb(' + a + ',' + b + ',' + c + ')';
+            document.querySelector("button").style.backgroundColor = color;
+        }
+        setInterval(change, 230);
+    </script>
+
+    <!--END CONTENT BODY-->
+
+{% endblock %}

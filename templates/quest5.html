@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}Úkol č. 5{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <h1>Úkol č. 5</h1>
+
+    <div class = "green-box">
+        <p>
+            <h3>Zadání:</h3>       
+        </p>
+
+        <p>
+            V následující anglické větě se nachází anglické slovo složené ze 7 písmen. Zjisti z věty ono slovo. Nápovědou ti bude <a class = "link" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fibonacci.jpg/225px-Fibonacci.jpg" target="_blank">tento obrázek</a>. Neber v 
+            potaz číslo 0. Rozluštěné slovo zapiš celé malými písmeny.<br>
+        </p>
+
+        <p>
+            <input id="answer" type="text" class="answer-input">
+        </p>
+    </div>
+
+    <div class = "nav">
+        <form method = "post" action = "/quest4">
+            <button type = "submit" class="left" onclick="setCookie('answer5')"><i class="fas fa-arrow-circle-left"></i></button>
+        </form>
+
+        <div onclick="document.getElementById('id01').style.display='block'">
+            <button type = "submit" class="right" onclick="setCookie('answer5')"><i class="fas fa-arrow-circle-right"></i></button>
+        </div>
+    </div>
+
+    <div id="id01" class="modal2" style="display: none;"> 
+        <form class="modal-content2 animate" action="/end" method="post">
+            <h2>Ukončení testu</h2>
+            <div class="form-content">
+                <button class = "button-login" type="submit" style="width: 45%;">Ukončit test</button>
+                <button class = "button-cancel" type="button" onclick="document.getElementById('id01').style.display='none'">Storno</button>
+            </div>
+        </form>
+    </div>
+
+    <div class = "pics">
+        <img src='{{ url_for("static", filename="img/mortySmile.png") }}' class="img1" width="200px">
+        <div class="cypher">
+            Elwoo works in Morty's new corporation.
+        </div>
+        <!--MRKNI SE DO KONSOLE xd-->
+    </div>
+
+    <script>
+        setValue("answer5");
+    </script>
+
+    <!-- END CONTENT BODY-->
+
+{% endblock %}

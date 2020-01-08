@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Úkol č. 1{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <h1>Úkol č. 1</h1>
+
+    <div class = "green-box">
+        <p>
+            <h3>Zadání:</h3>
+        </p>
+
+        <p>
+            Rick nechal Mortymu zprávu. Bohužel, zpráva je zakódovaná, aby si ji nemohl přečíst nikdo cizí.
+            Ačkoliv se Morty snažil ze všech sil, zprávu sám nerozluštil.
+            Pomoz Mortymu rozluštit zprávu.
+        </p>
+
+        <p>
+            <input id="answer" type="text" class="answer-input">
+        </p>
+    </div>
+
+    <div class = "nav">
+        <form method = "post" action = "/quest2">
+            <button type = "submit" class="right" onclick="setCookie('answer1')"><i class="fas fa-arrow-circle-right"></i></button>
+        </form>
+    </div>
+
+    <div class = "pics">
+        <img src='{{ url_for("static", filename="img/morty.png") }}' class="img1" width="200px">
+        <div class="cypher">
+            57 75 62 62 61 2D 4C 75 62 62 61 2D 44 75 62 2D 44 75 62 21
+        </div>
+        <!--MRKNI SE DO KONSOLE xd-->
+    </div>
+
+    <script>
+        setValue("answer1");
+    </script>
+
+    <!--END CONTENT BODY-->
+
+{% endblock %}

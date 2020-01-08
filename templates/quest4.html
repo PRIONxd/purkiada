@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}Úkol č. 4{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <h1>Úkol č. 4</h1>
+
+    <div class = "green-box">
+        <p>
+            <h3>Zadání:</h3>       
+        </p>
+
+        <p>
+            Zjisti z následující šifry skryté slovo. Nápověda: není to obyčejná počítačovština.
+        </p>
+
+        <p>
+            <input id="answer" type="text" class="answer-input">
+        </p>
+    </div>
+
+    <div class = "nav">
+        <form method = "post" action = "/quest3">
+            <button type = "submit" class="left" onclick="setCookie('answer4')"><i class="fas fa-arrow-circle-left"></i></button>
+        </form>
+
+        <form method = "post" action = "/quest5">
+            <button type = "submit" class="right" onclick="setCookie('answer4')"><i class="fas fa-arrow-circle-right"></i></button>
+        </form>
+    </div>
+
+    <div class = "pics">
+        <img src='{{ url_for("static", filename="img/cyberpunk.png") }}' class="img1" width="150px">
+        <div class="cypher">
+            11|111|010|000|0|111|0001|101|01
+        </div>
+        <!--MRKNI SE DO KONSOLE xd-->
+    </div>
+
+    <script>
+        setValue("answer4");
+    </script>
+
+    <!-- END CONTENT BODY-->
+
+{% endblock %}

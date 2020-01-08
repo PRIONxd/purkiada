@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Úkol č. 2{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <h1>Úkol č. 2</h1>
+
+    <div class = "body-cell">
+
+        <div class = "green-box">
+            <p>
+                <h3>Zadání:</h3>
+            </p>
+
+            <p>
+                ButterBot se rozbil. Ví jak se má opravit, ale nemůže nám to říct. Mluví pouze v jedničkách a nulách. Dokážeš zjistit, jak ho máme opravit?
+            </p>
+
+            <p>
+                <input id="answer" type="text" class="answer-input">
+            </p>
+        </div>
+
+        <div class = "nav">
+            <form method = "post" action = "/quest1">
+                <button type = "submit" class="left" onclick="setCookie('answer2')"><i class="fas fa-arrow-circle-left"></i></button>
+            </form>
+
+            <form method = "post" action = "/quest3">
+                <button type = "submit" class="right" onclick="setCookie('answer2')"><i class="fas fa-arrow-circle-right"></i></button>
+            </form>
+        </div>
+
+        <div class = "pics" style="justify-content: center;">
+            <img src='{{ url_for("static", filename="img/robotRick.png") }}' class="img1" width="200px">
+            <div class="cypher">
+                00110111 00110010 00100000 00110110 00110101 00100000 00110111 00110011 <br>
+                00100000 00110111 00110100 00100000 00110110 00110001 00100000 00110111 <br>
+                00110010 00100000 00110111 00110100 
+            </div>
+            <img src='{{ url_for("static", filename="img/robot.png") }}' class="img1" style="height: 200px;">
+             <!--MRKNI SE DO KONSOLE xd-->
+        </div>
+        
+    </div>
+
+    <script>
+        setValue("answer2");
+    </script>
+
+    <!--CONTENT BODY-->
+
+{% endblock %}

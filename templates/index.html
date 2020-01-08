@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}Šifry{% endblock %}
+{% block body %}
+
+    <!--CONTENT BODY-->
+
+    <h1>Šifrování</h1>
+
+    <div class = "container">
+        <form action="/" method = "POST" class="container-content">
+
+            <h2 style="color:black;">Přihlášení</h2>
+
+            <div class = "content-line">
+                <i class="fas fa-user icon"></i>
+                <input name="id" type="text" placeholder="Přihlašovací jméno" required>
+            </div>
+
+            <div class = "content-line"><i class="fas fa-lock icon"></i>
+                <input name="password" type="password" placeholder="Heslo" required>
+            </div>
+                      
+            <button type="submit" class="button-login">Odeslat <i class="fas fa-paper-plane"></i></button>
+
+        </form>
+
+        <div id = "bad-login"></div>
+    </div>
+
+    <script>
+        if( "{{status}}" == "no" ){
+            document.getElementById("bad-login").innerHTML = "Špatné přihlašovací údaje.";
+        }
+        else{
+            //pass
+         }
+    
+        deleteAllCookies();
+    </script>
+
+    <!--END CONTENT BODY-->
+
+{% endblock %}
