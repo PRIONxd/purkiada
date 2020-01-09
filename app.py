@@ -136,7 +136,7 @@ def end():
     
     #REDIRECT TO SIGNPOST
     g.student = None
-    return redirect(https://www.purkiada.cz)
+    return redirect("https://www.purkiada.cz/rick-and-morty")
 
 @application.route("/helloworldKominik123")
 def easteregg():
