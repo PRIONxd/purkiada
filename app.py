@@ -48,9 +48,9 @@ def index():
 
         #Authorization
         student = Student.query.filter_by(username = username, password = password).first()
-
-        #correct password
+        
         if student:
+            #correct password
             student = {"name":student.name, "username":student.username, "school": student.school}
             session["student"] = student
             return redirect(url_for("info"))
@@ -58,8 +58,9 @@ def index():
             #bad password
             return render_template("index.html", status = "no")
 
+    #GET METHOD    
     else:
-        #start with GET method
+        #rewrite easteregg js file & load page
         url = request.host_url + "helloworldKominik123"
         with open("static/scripts/scriptLog.js", 'w') as file:
             file.write("for(i = 0; i <10; i++){console.log( ' " + url + " '); console.log('');}")
