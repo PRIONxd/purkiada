@@ -134,9 +134,9 @@ def end():
         json.dump(jsonData, file, ensure_ascii=False)
         file.write("\n")
     
-    #another start
+    #REDIRECT TO SIGNPOST
     g.student = None
-    return redirect(url_for("index"))
+    return redirect(https://www.purkiada.cz)
 
 @application.route("/helloworldKominik123")
 def easteregg():
