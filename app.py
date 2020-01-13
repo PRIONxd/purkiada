@@ -36,7 +36,7 @@ def calculate(ans1, ans2, ans3, ans4, ans5, egg):
         points += 2
     return points
 
-@application.route("/", methods = ["GET", "POST"], subdomain = "purkiada")
+@application.route("/", methods = ["GET", "POST"])
 def index():
     #delete last student in session
     session.pop("student", None)
@@ -66,7 +66,7 @@ def index():
             file.write("for(i = 0; i <10; i++){console.log( ' " + url + " '); console.log('');}")
         return render_template("index.html", status = "yes")
         
-@application.route("/info", methods=["GET", "POST"], subdomain = "purkiada") 
+@application.route("/info", methods=["GET", "POST"]) 
 def info():
     if request.method == "POST":
         return redirect(url_for("quest1"))
@@ -76,42 +76,42 @@ def info():
         else:
             return redirect(url_for("index"))
 
-@application.route("/quest1", methods = ["GET", "POST"], subdomain = "purkiada")
+@application.route("/quest1", methods = ["GET", "POST"])
 def quest1():
     if g.student:
         return render_template("quest1.html", name = session["student"]["name"], school = session["student"]["school"])
     else:
         return redirect(url_for("index"))
 
-@application.route("/quest2", methods=["GET", "POST"], subdomain = "purkiada")
+@application.route("/quest2", methods=["GET", "POST"])
 def quest2():
     if g.student:
         return render_template("quest2.html", name = session["student"]["name"], school = session["student"]["school"])
     else:
         return redirect(url_for("index"))
 
-@application.route("/quest3", methods = ["GET", "POST"], subdomain = "purkiada")
+@application.route("/quest3", methods = ["GET", "POST"])
 def quest3():
     if g.student:
         return render_template("quest3.html", name = session["student"]["name"], school = session["student"]["school"])
     else:
         return redirect(url_for("index"))
 
-@application.route("/quest4", methods = ["GET", "POST"], subdomain = "purkiada")
+@application.route("/quest4", methods = ["GET", "POST"])
 def quest4():
     if g.student:
         return render_template("quest4.html", name = session["student"]["name"], school = session["student"]["school"])
     else:
         return redirect(url_for("index"))
 
-@application.route("/quest5", methods = ["GET", "POST"], subdomain = "purkiada")
+@application.route("/quest5", methods = ["GET", "POST"])
 def quest5():
     if g.student:
         return render_template("quest5.html", name = session["student"]["name"], school = session["student"]["school"])
     else:
         return redirect(url_for("index"))
 
-@application.route("/end", methods = ["GET", "POST"], subdomain = "purkiada")
+@application.route("/end", methods = ["GET", "POST"])
 def end():
     #get score-data
     answer1 = request.cookies["answer1"]
@@ -138,7 +138,7 @@ def end():
     g.student = None
     return redirect("https://www.purkiada.cz/rick-and-morty")
 
-@application.route("/helloworldKominik123", subdomain = "purkiada")
+@application.route("/helloworldKominik123")
 def easteregg():
     if g.student:
         return render_template("easteregg.html")
