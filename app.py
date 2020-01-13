@@ -9,7 +9,7 @@ application = Flask(__name__)
 application.config.update(dict(SECRET_KEY="LOPDEWQUN25x", WTF_CSRF_SECRET_KEY="LOPDEWQUN25x")) #key for sending forms
 application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 application.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/student.db"
-application.config["SECRET_KEY"] = "SQUOIMD1892xe"
+application.config["SECRET_KEY"] = "SQUOIMD1892xe" #Secret cipher for DB
 
 db = SQLAlchemy(application)
 
