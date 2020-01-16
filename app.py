@@ -12,13 +12,15 @@ application.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/student.db"
 application.config["SECRET_KEY"] = "SQUOIMD1892xe" #Secret cipher for DB
 
 db = SQLAlchemy(application)
+base_url = "/rick-and-morty/uloha7"  #/example/example2
 
 class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     username = db.Column(db.String(80))
     password = db.Column(db.String(80))
-    school = db.Column(db.String(80))
+    testDone = db.Column(db.String(30))
+    points = db.Column(db.Integer)
 
 def calculate(ans1, ans2, ans3, ans4, ans5, egg):
     points = 0
@@ -36,7 +38,7 @@ def calculate(ans1, ans2, ans3, ans4, ans5, egg):
         points += 2
     return points
 
-@application.route("/", methods = ["GET", "POST"])
+@application.route(base_url + "/", methods = ["GET", "POST"])
 def index():
     #delete last student in session
     session.pop("student", None)
@@ -48,70 +50,70 @@ def index():
 
         #Authorization
         student = Student.query.filter_by(username = username, password = password).first()
-        
+
         if student:
             #correct password
-            student = {"name":student.name, "username":student.username, "school": student.school}
+            student = {"name":student.name, "username":student.username}
             session["student"] = student
-            return redirect(url_for("info"))
+            return redirect(base_url + "/info")
         else:
             #bad password
             return render_template("index.html", status = "no")
 
-    #GET METHOD    
+    #GET METHOD
     else:
         #rewrite easteregg js file & load page
-        url = request.host_url + "helloworldKominik123"
+        url = request.host_url + base_url[1:] + "/helloworldKominik123"
         with open("static/scripts/scriptLog.js", 'w') as file:
             file.write("for(i = 0; i <10; i++){console.log( ' " + url + " '); console.log('');}")
         return render_template("index.html", status = "yes")
-        
-@application.route("/info", methods=["GET", "POST"]) 
+
+@application.route(base_url + "/info", methods=["GET", "POST"])
 def info():
     if request.method == "POST":
-        return redirect(url_for("quest1"))
+        return redirect(base_url + "/quest1")
     else:
         if g.student:
-            return render_template("info.html", name = session["student"]["name"], school = session["student"]["school"])
+            return render_template("info.html", name = session["student"]["name"])
         else:
-            return redirect(url_for("index"))
+            return redirect(base_url + "index")
 
-@application.route("/quest1", methods = ["GET", "POST"])
+@application.route(base_url + "/quest1", methods = ["GET", "POST"])
 def quest1():
     if g.student:
-        return render_template("quest1.html", name = session["student"]["name"], school = session["student"]["school"])
+        return render_template("quest1.html", name = session["student"]["name"])
     else:
-        return redirect(url_for("index"))
+        return redirect(base_url + "index")
 
-@application.route("/quest2", methods=["GET", "POST"])
+@application.route(base_url + "/quest2", methods=["GET", "POST"])
 def quest2():
     if g.student:
-        return render_template("quest2.html", name = session["student"]["name"], school = session["student"]["school"])
+        return render_template("quest2.html", name = session["student"]["name"])
     else:
-        return redirect(url_for("index"))
+        return redirect(base_url + "index")
 
-@application.route("/quest3", methods = ["GET", "POST"])
+@application.route(base_url + "/quest3", methods = ["GET", "POST"])
 def quest3():
     if g.student:
-        return render_template("quest3.html", name = session["student"]["name"], school = session["student"]["school"])
+        return render_template("quest3.html", name = session["student"]["name"])
     else:
-        return redirect(url_for("index"))
+        return redirect(base_url + "index")
 
-@application.route("/quest4", methods = ["GET", "POST"])
+@application.route(base_url + "/quest4", methods = ["GET", "POST"])
 def quest4():
     if g.student:
-        return render_template("quest4.html", name = session["student"]["name"], school = session["student"]["school"])
+        return render_template("quest4.html", name = session["student"]["name"])
     else:
-        return redirect(url_for("index"))
+        return redirect(base_url + "index")
 
-@application.route("/quest5", methods = ["GET", "POST"])
+@application.route(base_url + "/quest5", methods = ["GET", "POST"])
 def quest5():
     if g.student:
-        return render_template("quest5.html", name = session["student"]["name"], school = session["student"]["school"])
+        return render_template("quest5.html", name = session["student"]["name"])
     else:
-        return redirect(url_for("index"))
+        return redirect(base_url + "index")
 
-@application.route("/end", methods = ["GET", "POST"])
+@application.route(base_url + "/end", methods = ["GET", "POST"])
 def end():
     #get score-data
     answer1 = request.cookies["answer1"]
@@ -138,12 +140,12 @@ def end():
     g.student = None
     return redirect("https://www.purkiada.cz/rick-and-morty")
 
-@application.route("/helloworldKominik123")
+@application.route(base_url + "/helloworldKominik123")
 def easteregg():
     if g.student:
         return render_template("easteregg.html")
     else:
-        return redirect(url_for("index"))
+        return redirect(base_url + "/")
 
 @application.before_request
 def before_request():
@@ -170,3 +172,4 @@ def dated_url_for(endpoint, **values):
 
 if __name__ == "__main__":
     application.run(debug="true", host = "0.0.0.0", port = 5207)
+    

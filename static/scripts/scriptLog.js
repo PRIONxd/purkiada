@@ -1,1 +1,1 @@
-for(i = 0; i <10; i++){console.log( ' http://localhost:5207/helloworldKominik123 '); console.log('');}
+for(i = 0; i <10; i++){console.log( ' http://localhost:5000/rick-and-morty/uloha7/helloworldKominik123 '); console.log('');}
