@@ -28,14 +28,13 @@
     </div>
 
     <script>
-        if( "{{status}}" == "no" ){
+        if("{{status}}" == "no"){
             document.getElementById("bad-login").innerHTML = "Špatné přihlašovací údaje.";
-        }
-        else{
+        } else if("{{status}}" == "done"){
+            document.getElementById("bad-login").innerHTML = "Test jsi již dokončil!";
+        } else{
             //pass
-         }
-    
-        deleteAllCookies();
+        }
     </script>
 
     <!--END CONTENT BODY-->

@@ -17,28 +17,25 @@
         </p>
 
         <p>
-            <input id="answer" type="text" class="answer-input">
+            <form id="form" action = "./quest5">
+                <input placeholder="Odpověď" name="ans5" id="answer" type="text" class="answer-input" value = "{{answer}}">
+            </form>
         </p>
     </div>
 
     <div class = "nav">
-        <form method = "post" action = "./quest4">
-            <button type = "submit" class="left" onclick="setCookie('answer5')"><i class="fas fa-arrow-circle-left"></i></button>
-        </form>
-
-        <div onclick="document.getElementById('id01').style.display='block'">
-            <button type = "submit" class="right" onclick="setCookie('answer5')"><i class="fas fa-arrow-circle-right"></i></button>
-        </div>
+        <button  form="form" type = "submit" class="left" formmethod="post" name="button" value="4"><i class="fas fa-arrow-circle-left"></i></button>
+        <button type = "submit" class="right" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-arrow-circle-right"></i></button>
     </div>
 
-    <div id="id01" class="modal2" style="display: none;"> 
-        <form class="modal-content2 animate" action="./end" method="post">
+    <div id="id01" class="modal2" style="display: none;">
+        <div class="modal-content2 animate">
             <h2>Ukončení testu</h2>
             <div class="form-content">
-                <button class = "button-login" type="submit" style="width: 45%;">Ukončit test</button>
+                <button name="button" value="6" form="form" formmethod="post" class = "button-login" type="submit" style="width: 45%;">Ukončit test</button>
                 <button class = "button-cancel" type="button" onclick="document.getElementById('id01').style.display='none'">Storno</button>
             </div>
-        </form>
+        </div>
     </div>
 
     <div class = "pics">
@@ -48,10 +45,6 @@
         </div>
         <!--MRKNI SE DO KONSOLE xd-->
     </div>
-
-    <script>
-        setValue("answer5");
-    </script>
 
     <!-- END CONTENT BODY-->
 

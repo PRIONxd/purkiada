@@ -18,14 +18,14 @@
         </p>
 
         <p>
-            <input id="answer" type="text" class="answer-input">
+            <form id="form" method = "post" action = "./quest1">
+                <input placeholder="Odpověď" name="ans1" id="answer" type="text" class="answer-input" value = "{{answer}}">
+            </form>
         </p>
     </div>
 
     <div class = "nav">
-        <form method = "post" action = "./quest2">
-            <button type = "submit" class="right" onclick="setCookie('answer1')"><i class="fas fa-arrow-circle-right"></i></button>
-        </form>
+        <button form="form" type = "submit" class="right"><i class="fas fa-arrow-circle-right"></i></button>
     </div>
 
     <div class = "pics">
@@ -35,10 +35,6 @@
         </div>
         <!--MRKNI SE DO KONSOLE xd-->
     </div>
-
-    <script>
-        setValue("answer1");
-    </script>
 
     <!--END CONTENT BODY-->
 

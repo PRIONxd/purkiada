@@ -19,27 +19,20 @@
         </p>
 
         <p>
-            <input id="answer" type="text" class="answer-input">
+            <form id="form" action = "./quest3">
+                <input placeholder="Odpověď" name="ans3" id="answer" type="text" class="answer-input" value = "{{answer}}">
+            </form>
         </p>
     </div>
 
     <div class = "nav">
-        <form method = "post" action = "./quest2">
-            <button type = "submit" class="left" onclick="setCookie('answer3')"><i class="fas fa-arrow-circle-left"></i></button>
-        </form>
-
-        <form method = "post" action = "./quest4">
-            <button type = "submit" class="right" onclick="setCookie('answer3')"><i class="fas fa-arrow-circle-right"></i></button>
-        </form>
+        <button  form="form" type = "submit" class="left" formmethod="post" name="button" value="2"><i class="fas fa-arrow-circle-left"></i></button>
+        <button form="form" type = "submit" class="right" formmethod="post" name="button" value="4"><i class="fas fa-arrow-circle-right"></i></button>
     </div>
 
     <center><img src= '.{{ url_for("static", filename="img/rickPC2.png") }}' class="img1" style="width:900px; margin-bottom:50px;"></center>
     <!--MRKNI SE DO KONSOLE xd-->
 
-    <script>
-        setValue("answer3");
-    </script>
-
-    <!-- END CONTENT BODY-->
+    <!--END CONTENT BODY-->
 
 {% endblock %}

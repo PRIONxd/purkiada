@@ -9,68 +9,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-    <link rel="shortcut icon" type="image/ico" href='.{{url_for("static", filename="img/favicon.ico")}}'> <!--Favicon-->
-    <link rel="stylesheet" type="text/css" href='.{{url_for("static", filename="styles/style.css")}}'> <!--CSS-->
+    <link rel="shortcut icon" type="image/ico" href='{{url_for("static", filename="img/favicon.ico")}}'> <!--Favicon-->
+    <link rel="stylesheet" type="text/css" href='{{url_for("static", filename="styles/style.css")}}'> <!--CSS-->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins&display=swap"> <!-- Poppins font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> <!-- Montserrat font-->
 
     <script src="https://kit.fontawesome.com/7ba2315b18.js" crossorigin="anonymous"></script><!-- ICONS -->
-    <script src='.{{url_for("static", filename="scripts/scriptLog.js")}}'></script><!--Egg-->
+    <script src='{{url_for("static", filename="scripts/scriptLog.js")}}'></script><!--Egg-->
   </head>
 
   <body>
 
-    <script>
-    
-      function getCookie(cname){
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i < ca.length; i++){
-          var c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-      }
-
-      function setCookie(cname, exdays){
-        cvalue = document.getElementById("answer").value
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires="+d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      }
-    
-      function setValue(answer){
-        cvalue = getCookie(answer)
-          if (cvalue ==""){
-            document.getElementById("answer").placeholder = "Rozluštěná hodnota";
-          }
-          else{
-            document.getElementById("answer").value = cvalue;
-          }
-      }
-      
-      function deleteAllCookies() {
-        var cookies = document.cookie.split(";");
-
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i];
-            var eqPos = cookie.indexOf("=");
-            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        }
-}
-    </script>
-
     <div class = "login-box">
       <div class = "name">{{ name }}</div>
-      <div class = "school">{{ school }}</div>
     </div>
 
     {% block body %}
