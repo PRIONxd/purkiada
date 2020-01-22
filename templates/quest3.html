@@ -6,28 +6,28 @@
 
     <h1>Úkol č. 3</h1>
 
-    <div class = "green-box">
+    <div class="green-box">
         <p>
             <h3>Zadání:</h3>       
         </p>
 
         <p>
-            Morty se chtěl dostat do Rickova počítače. Na počítači byl nalepen papírek s nápisem: <span class = "word">koblja</span>.<br>
-            Při zadání mu počítač ovšem napsal, že má zadat heslo v <span class = "word">nezašifrované formě</span>.<br>
+            Morty se chtěl dostat do Rickova počítače. Na počítači byl nalepen papírek s nápisem: <span class="word">koblja</span>.<br>
+            Při zadání mu počítač ovšem napsal, že má zadat heslo v <span class="word">nezašifrované formě</span>.<br>
             Morty našel program, který vytvořil toto šifrování a otevřel jeho zdrojový kód.<br>
             Pomůžeš Mortymu zjistit, jak šifrovací program funguje a rozluštit tak heslo?
         </p>
 
         <p>
-            <form id="form" action = "./quest3">
-                <input placeholder="Odpověď" name="ans3" id="answer" type="text" class="answer-input" value = "{{answer}}">
+            <form id="form" action="./quest3">
+                <input placeholder="Odpověď" name="ans3" id="answer" type="text" class="answer-input" value="{{answer}}">
             </form>
         </p>
     </div>
 
-    <div class = "nav">
-        <button  form="form" type = "submit" class="left" formmethod="post" name="button" value="2"><i class="fas fa-arrow-circle-left"></i></button>
-        <button form="form" type = "submit" class="right" formmethod="post" name="button" value="4"><i class="fas fa-arrow-circle-right"></i></button>
+    <div class="nav">
+        <button  form="form" type="submit" class="left" formmethod="post" name="button" value="2"><i class="fas fa-arrow-circle-left"></i></button>
+        <button form="form" type="submit" class="right" formmethod="post" name="button" value="4"><i class="fas fa-arrow-circle-right"></i></button>
     </div>
 
     <center><img src= '.{{ url_for("static", filename="img/rickPC2.png") }}' class="img1" style="width:900px; margin-bottom:50px;"></center>

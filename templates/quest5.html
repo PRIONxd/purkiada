@@ -6,39 +6,39 @@
 
     <h1>Úkol č. 5</h1>
 
-    <div class = "green-box">
+    <div class="green-box">
         <p>
             <h3>Zadání:</h3>       
         </p>
 
         <p>
-            V následující anglické větě se nachází anglické slovo složené ze 7 písmen. Zjisti z věty ono slovo. Nápovědou ti bude <a class = "link" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fibonacci.jpg/225px-Fibonacci.jpg" target="_blank">tento obrázek</a>. Neber v 
+            V následující anglické větě se nachází anglické slovo složené ze 7 písmen. Zjisti z věty ono slovo. Nápovědou ti bude <a class="link" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fibonacci.jpg/225px-Fibonacci.jpg" target="_blank">tento obrázek</a>. Neber v 
             potaz číslo 0. Rozluštěné slovo zapiš celé malými písmeny.<br>
         </p>
 
         <p>
-            <form id="form" action = "./quest5">
-                <input placeholder="Odpověď" name="ans5" id="answer" type="text" class="answer-input" value = "{{answer}}">
+            <form id="form" action="./quest5">
+                <input placeholder="Odpověď" name="ans5" id="answer" type="text" class="answer-input" value="{{answer}}">
             </form>
         </p>
     </div>
 
-    <div class = "nav">
-        <button  form="form" type = "submit" class="left" formmethod="post" name="button" value="4"><i class="fas fa-arrow-circle-left"></i></button>
-        <button type = "submit" class="right" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-arrow-circle-right"></i></button>
+    <div class="nav">
+        <button  form="form" type="submit" class="left" formmethod="post" name="button" value="4"><i class="fas fa-arrow-circle-left"></i></button>
+        <button type="submit" class="right" onclick="document.getElementById('id01').style.display='block'"><i class="fas fa-arrow-circle-right"></i></button>
     </div>
 
     <div id="id01" class="modal2" style="display: none;">
         <div class="modal-content2 animate">
             <h2>Ukončení testu</h2>
             <div class="form-content">
-                <button name="button" value="6" form="form" formmethod="post" class = "button-login" type="submit" style="width: 45%;">Ukončit test</button>
-                <button class = "button-cancel" type="button" onclick="document.getElementById('id01').style.display='none'">Storno</button>
+                <button name="button" value="6" form="form" formmethod="post" class="button-login" type="submit" style="width: 45%;">Ukončit test</button>
+                <button class="button-cancel" type="button" onclick="document.getElementById('id01').style.display='none'">Storno</button>
             </div>
         </div>
     </div>
 
-    <div class = "pics">
+    <div class="pics">
         <img src='.{{ url_for("static", filename="img/mortySmile.png") }}' class="img1" width="200px">
         <div class="cypher">
             Elwoo works in Morty's new corporation.

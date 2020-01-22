@@ -6,17 +6,17 @@
 
     <h1>Šifrování</h1>
 
-    <div class = "container">
-        <form action="./" method = "POST" class="container-content">
+    <div class="container">
+        <form action="./" method="POST" class="container-content">
 
             <h2 style="color:black;">Přihlášení</h2>
 
-            <div class = "content-line">
+            <div class="content-line">
                 <i class="fas fa-user icon"></i>
                 <input name="id" type="text" placeholder="Přihlašovací jméno" required>
             </div>
 
-            <div class = "content-line"><i class="fas fa-lock icon"></i>
+            <div class="content-line"><i class="fas fa-lock icon"></i>
                 <input name="password" type="password" placeholder="Heslo" required>
             </div>
                       
@@ -24,14 +24,14 @@
 
         </form>
 
-        <div id = "bad-login"></div>
+        <div id="bad-login"></div>
     </div>
 
     <script>
         if("{{status}}" == "no"){
-            document.getElementById("bad-login").innerHTML = "Špatné přihlašovací údaje.";
+            document.getElementById("bad-login").innerHTML="Špatné přihlašovací údaje.";
         } else if("{{status}}" == "done"){
-            document.getElementById("bad-login").innerHTML = "Test jsi již dokončil!";
+            document.getElementById("bad-login").innerHTML="Test jsi již dokončil!";
         } else{
             //pass
         }

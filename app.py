@@ -1,20 +1,15 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, url_for, request, redirect, session, g, make_response
-from flask_wtf import FlaskForm
 from flask_sqlalchemy import SQLAlchemy
 import os
 import json
 
 application = Flask(__name__)
-application.config.update(dict(SECRET_KEY="LOPDEWQUN25x", WTF_CSRF_SECRET_KEY="LOPDEWQUN25x")) #key for sending forms
-application.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-application.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/student.db"
-application.config["SECRET_KEY"] = "SQUOIMD189++-/=2xeASwfdsZFwWhgfXDGbDFQ5891*-/p" #Secret cipher for DB
-
-db = SQLAlchemy(application)
+application.config.from_object("config.BaseConfig")
 base_url = "/rick-and-morty/uloha7"  #/example/example2
+db = SQLAlchemy(application)
 
-class Student(db.Model): #external database from Lukyn Matuška
+class Student(db.Model):
     id = db.Column(db.String(80), primary_key=True)
     name = db.Column(db.String(80))
     username = db.Column(db.String(80))
@@ -197,6 +192,15 @@ def easteregg():
     else:
         return redirect(base_url + "/")
 
+@application.route(base_url + "/results")
+def results():
+    data = ""
+    students = Student.query.all()
+    for student in students:
+        data += json.dumps(student.to_json(), ensure_ascii=False)
+        data += "<br><br>"
+    return data
+
 @application.before_request
 def before_request():
     g.student = None
@@ -221,5 +225,5 @@ def dated_url_for(endpoint, **values):
     return url_for(endpoint, **values)
 
 if __name__ == "__main__":
-    #application.run(debug="true", host = "0.0.0.0", port = 5207)
-    application.run(debug="true")
+    #application.run(host = "0.0.0.0", port = 5207)
+    application.run()

@@ -6,9 +6,9 @@
 
     <h1>Úkol č. 2</h1>
 
-    <div class = "body-cell">
+    <div class="body-cell">
 
-        <div class = "green-box">
+        <div class="green-box">
             <p>
                 <h3>Zadání:</h3>
             </p>
@@ -18,18 +18,18 @@
             </p>
 
             <p>
-                <form id="form" action = "./quest2">
-                    <input placeholder="Odpověď" id="answer" type="text" class="answer-input" name="ans2" value = "{{answer}}">
+                <form id="form" action="./quest2">
+                    <input placeholder="Odpověď" id="answer" type="text" class="answer-input" name="ans2" value="{{answer}}">
                 </form>
             </p>
         </div>
 
-        <div class = "nav">
-            <button  form="form" type = "submit" class="left" formmethod="post" name="button" value="1"><i class="fas fa-arrow-circle-left"></i></button>
-            <button form="form" type = "submit" class="right" formmethod="post" name="button" value="3"><i class="fas fa-arrow-circle-right"></i></button>
+        <div class="nav">
+            <button  form="form" type="submit" class="left" formmethod="post" name="button" value="1"><i class="fas fa-arrow-circle-left"></i></button>
+            <button form="form" type="submit" class="right" formmethod="post" name="button" value="3"><i class="fas fa-arrow-circle-right"></i></button>
         </div>
 
-        <div class = "pics" style="justify-content: center;">
+        <div class="pics" style="justify-content: center;">
             <img src='.{{ url_for("static", filename="img/robotRick.png") }}' class="img1" width="200px">
             <div class="cypher">
                 00110111 00110010 00100000 00110110 00110101 00100000 00110111 00110011 <br>
