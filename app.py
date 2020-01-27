@@ -12,6 +12,7 @@ db = SQLAlchemy(application)
 class Student(db.Model):
     id = db.Column(db.String(80), primary_key=True)
     name = db.Column(db.String(80))
+    surname = db.Column(db.String(80))
     username = db.Column(db.String(80))
     password = db.Column(db.String(80))
     testDone = db.Column(db.String(30))
@@ -37,6 +38,7 @@ class Student(db.Model):
         result = dict()
         result["id"] = self.id
         result["name"] = self.name
+        result["surname"] = self.surname
         result["username"] = self.username
         result["password"] = self.password
         result["testDone"] = self.testDone
@@ -84,7 +86,7 @@ def index():
 def info():
     if request.method == "GET":
         if g.student:
-            return render_template("info.html", name = session["student"]["name"])
+            return render_template("info.html", name = session["student"]["name"], surname = session["student"]["surname"])
         else:
             return redirect(base_url + "/")
     elif request.method == "POST":
@@ -94,7 +96,7 @@ def info():
 def quest1():
     if request.method == "GET":
         if g.student:
-            return render_template("quest1.html", name = session["student"]["name"], answer = get_cookie("answer1"))
+            return render_template("quest1.html", name = session["student"]["name"], surname = session["student"]["surname"], answer = get_cookie("answer1"))
         else:
             return redirect(base_url + "/")
     elif request.method == "POST":
@@ -106,7 +108,7 @@ def quest1():
 def quest2():
     if request.method == "GET":
         if g.student:
-            return render_template("quest2.html", name = session["student"]["name"], answer = get_cookie("answer2"))
+            return render_template("quest2.html", name = session["student"]["name"], surname = session["student"]["surname"], answer = get_cookie("answer2"))
         else:
             return redirect(base_url + "/")
     elif request.method == "POST":
@@ -119,7 +121,7 @@ def quest2():
 def quest3():
     if request.method == "GET":
         if g.student:
-            return render_template("quest3.html", name = session["student"]["name"], answer = get_cookie("answer3"))
+            return render_template("quest3.html", name = session["student"]["name"], surname = session["student"]["surname"], answer = get_cookie("answer3"))
         else:
             return redirect(base_url + "/")
     elif request.method == "POST":
@@ -132,7 +134,7 @@ def quest3():
 def quest4():
     if request.method == "GET":
         if g.student:
-            return render_template("quest4.html", name = session["student"]["name"], answer = get_cookie("answer4"))
+            return render_template("quest4.html", name = session["student"]["name"], surname = session["student"]["surname"], answer = get_cookie("answer4"))
         else:
             return redirect(base_url + "/")
     elif request.method == "POST":
@@ -145,7 +147,7 @@ def quest4():
 def quest5():
     if request.method == "GET":
         if g.student:
-            return render_template("quest5.html", name = session["student"]["name"], answer = get_cookie("answer5"))
+            return render_template("quest5.html", name = session["student"]["name"], surname = session["student"]["surname"], answer = get_cookie("answer5"))
         else:
             return redirect(base_url + "/")
     elif request.method == "POST":
