@@ -194,15 +194,6 @@ def easteregg():
     else:
         return redirect(base_url + "/")
 
-@application.route(base_url + "/results")
-def results():
-    data = ""
-    students = Student.query.all()
-    for student in students:
-        data += json.dumps(student.to_json(), ensure_ascii=False)
-        data += "<br><br>"
-    return data
-
 @application.before_request
 def before_request():
     g.student = None
