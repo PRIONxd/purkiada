@@ -1,4 +1,4 @@
-bottle==0.12.17
+bottle==0.12.19
 Click==7.0
 Flask==1.1.1
 Flask-SQLAlchemy==2.4.1
